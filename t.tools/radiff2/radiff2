@@ -54,9 +54,11 @@ EXPECT="0x000004b0 48656c6c => 01020304 0x000004b0
 run_test
 
 NAME='radiff2 gnu unified string comparsion'
-BROKEN=1
+BROKEN=
 ARGS=
-CMDS="!!radiff2 -Uz ../../bins/elf/elf_one_symbol_shdr ../../bins/elf/elf_one_symbol_shdr1"
-EXPECT="0x000004b0 48656c6c => 01020304 0x000004b0
+CMDS="!!radiff2 -Uz ../../bins/elf/elf_one_symbol_shdr ../../bins/elf/elf_one_symbol_shdr1|tail -3"
+EXPECT="@@ -1 +1 @@
+-Hello world!
++o world!
 "
 run_test
